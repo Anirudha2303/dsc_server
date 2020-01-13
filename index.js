@@ -46,9 +46,12 @@ app.get("/speed", (req, res, next) => {
         roadClosure
       } = response.data.flowSegmentData;
 
-      res
-        .status(200)
-        .json({ currentSpeed, freeFlowSpeed, confidence, roadClosure });
+      res.status(200).json({
+        currentSpeed,
+        freeFlowSpeed,
+        confidence,
+        roadClosure
+      });
     })
     .catch(err => {
       console.error(err);
